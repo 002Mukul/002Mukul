@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>
+            user Registration
+        </title>
+        <meta name="viewport"
+        content=
+        "width=device-width, initial-scale=1.0" />
+        <link href=
+"https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet" />
+ 
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet"
+              href=
+"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+        <script type="text/javascript"
+                src=
+     "https://code.jquery.com/jquery-2.1.1.min.js">
+      </script>
+        <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+      .maincontainer{
+         width:100%;
+         height:100vh;
+         background:#fff;
+         display:flex;          
+         justify-content:center;
+         align-items:center;         
+            }
+
+        
+      .root{
+                   width:550px;
+                   height:auto;
+                   background:#fff;
+                   border-radius: 15px;                    
+                   padding:15px;
+                   margin-top:90px;
+                      }
+      .heading{
+          font-size:20px;
+          
+          color:#000;
+          display:flex;
+        
+                }
+      .rowgap{
+      margin-top: 40px;}
+      
+      </style>
+    </head>
+    <body>
+        
+        <div class="maincontainer">
+            <div class="root" >
+                <div class="heading">
+                    <div>
+                        <center>
+                            <h>User Form</h>
+                        </center>
+                    </div>
+    
+                </div>
+
+            <div class="input-field col s12">
+            <button class="btn waves-effect waves-light" id="btnmob" type="button" name="btn" value="number"style="margin-top:50px;margin-left:115px;width:57%;font-size:15px; border-radius:15px;background-color:#78e08f;">Login with Mobile Number
+            </button>
+          </div>             
+          <div style="margin-top:100px;">
+              <center>
+              Don't have an account?
+            </center>
+          </div>
+          <div class="input-field col s12">
+            <button class="btn waves-effect waves-light" id="btncna" type="button" name="btn" value="create"  style="margin-left:115px;width:57%;font-size:15px; border-radius:15px;background-color:#3742fa;">Create new account
+            </button>
+          </div>         
+
+</div>
+</div>
+</body>
+<script>
+    $('#btnmob').click(function(){
+
+        location.href="http://localhost:8000/loginm/"
+    })
+    $('#btncna').click(function(){
+        location.href="http://localhost:8000/userdetails/"
+    })
+
+
+</script>
+</html>
+
+
+
+    
+    

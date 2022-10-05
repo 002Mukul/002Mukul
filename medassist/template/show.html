@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<style type="text/css">
+    .droot{
+         width:100%;
+         height:auto;
+         background:#f5f6fa;
+         display:flex;          
+         justify-content:center;
+         align-items:center;         
+            }
+    .dsubdivision{
+                   width:1500px;
+                   height:auto;
+                   background:#7f8fa6;
+                   border-radius: 15px;                    
+                   padding:15px;
+                      }
+    .dhead{
+          font-size:20px;
+          font-weight:bold;
+          letter-spacing: 2px;
+          color:#000;
+          display:flex;          
+          align-items:center;
+          padding:5px;
+                     
+
+             }
+    .root{
+         width:100%;
+         height:100vh;
+         background:#f5f6fa;
+         display:flex;          
+         justify-content:center;
+         align-items:center;         
+            }
+    .subdivision{
+                   width:1500px;
+                   height:auto;
+                   background:#7f8fa6;
+                   border-radius: 15px;                    
+                   padding:15px;
+                      }
+    .head{
+          font-size:20px;
+          font-weight:bold;
+          letter-spacing: 2px;
+          color:#FFF;
+          display:flex;
+          align-items:center;
+          padding:5px;
+                     
+
+             } 
+    
+    .tbtexthead{
+        
+        color:#fff;
+        font-size:20px;
+        font-weight:bold;
+    } 
+    .tbtext{
+        
+        color:#fff;   
+        font-weight:bold;
+        font-size:18px;
+    } 
+</style>            
+<html>
+  <head>
+  <!--Import Google Icon Font-->
+
+  <title>Doctor Display</title>
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css"
+  rel="stylesheet"
+/><!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>/>
+</head>
+   <body>
+        <div class="root">
+            <div class="subdivision">
+            
+                <div class="head" >  
+                               
+                    
+                      Doctor's List
+                </div>
+                            
+                
+            
+            <table class="table align-middle">
+            <thead class="tbtexthead">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">catagory</th>
+                <th scope="col">Icon</th>
+                
+              </tr>
+            </thead>
+            <tbody class="tbtext">
+                {% for row in result %}
+                <tr>
+                <th scope="row">{{ row.productid}}</th>
+                <td>{{ row.productname}}</td>
+                <td><button type="button" drid={{row.DoctorId}} dricon={{ row.Profilepicture }} drdb={{row.Dob}} drgr={{row.Gender}} drmb={{row.Mobileno}} dreml={{row.Emailaddress}} drspc={{row.Speciality}} class="btnicon btn-light btn-sm px-3" data-ripple-color="dark" data-mdb-target="#iconModal">
+                                 
+                  <img src="/static/{{row.picofproduct}}"                  
+                  style="width:80px";
+                  /> 
+                </button>                  
+                </td>                            
+                
+              </tr>   
+                {% endfor %}           
+            </tbody>
+            </table>
+            </div>
+        </div>
+        <!--Dialog-->
+        <!-- Modal -->
+
+ </body>   
+<!--MDB-->
+<script type="text/javascript" 
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js">
+</script>
+</html>

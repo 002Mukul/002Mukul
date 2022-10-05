@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<style type="text/css">
+     .root{
+          width:100%;
+          height:100vh;
+          background:#f5f6fa;
+          display:flex;          
+          justify-content:center;
+          align-items:center;         
+             }
+     .subdivision{
+                    width:700px;
+                    height:auto;
+                    background:#7f8fa6;
+                    border-radius: 15px;                    
+                    padding:15px;
+                       }
+     .head{
+           font-size:20px;
+           font-weight:bold;
+           letter-spacing: 2px;
+           color:#FFF;
+           display:flex;
+           align-items:center;
+           padding:5px;
+                      
+
+              }  
+</style>            
+<html>
+<head>              
+<title>Doctor registration form</title>
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css"
+  rel="stylesheet"
+/>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/static/project.js"></script>
+
+</head>
+<body>
+        <form action="/doctorsubmit" method="POST" enctype="multipart/form-data">  {% csrf_token %}
+        <div class="root">
+            <div class="subdivision">
+                <div class="head">
+                    <span><img src="/static/logo1.png" width="30px;"></span>
+                    <span style="padding-left:10px;">
+                        Doctor Registration
+                    </span>
+                </div>    
+                         
+                <div class="row" style="margin-top:6px">
+                    <div class="col-12">
+                         <div class="form-outline form-white">
+                           <input type="text" id="drs" name="drs" class="form-control form-control-lg" />
+                            <label class="form-label" for="drs">Doctor's Name</label>
+                           </div>
+                       </div>
+                </div>
+                <div class="row" style="margin-top:6px">
+                    <div class="col-12">
+                         <div class="form-outline form-white" style="color:white;">                          
+                           <input type="date" id="drdob" name="drdob" class="form-control form-control-lg"/>
+                           <label class="form-label" style="color:white" for="drdob"> Date Of Birth</label>
+                            
+                           </div>
+                       </div>
+                </div>
+                <div class="row" style="margin-top:6px">
+                    <div class="col-12">
+                    <div class="form-outline form-white">
+                          <label class="form-check-label" style="color:white" for="inlineRadio1">Doctor Gender: </label>
+                         <div class="form-check form-check-inline form-white">                            
+                           <input class="form-check-input" type="radio" name="drg" id="drg" value="Male" />
+                           <label class="form-check-label" style="color:white" for="inlineRadio1">Male</label>
+                         </div>
+                     <div class="form-check form-check-inline form-white">
+                         <input class="form-check-input" type="radio" name="drg" id="drg" value="Female" />
+                         <label class="form-check-label" style="color:white" for="inlineRadio2">Female</label>
+                     </div>
+
+                    <div class="form-check form-check-inline form-white">
+                       <input class="form-check-input" type="radio" name="drg" id="drg" value="Others"/>
+                      <label class="form-check-label" style="color:white" for="inlineRadio3">Others</label>
+                   </div>
+                         </div>
+                         </div>
+                </div>
+           <div class="row" style="margin-top:6px">
+                    <div class="col-12">
+                         <div class="form-outline form-white">
+                           <input type="email" id="drem" name="drem" class="form-control form-control-lg" />
+                            <label class="form-label" for="drem">Doctor Email</label>
+                           </div>
+                       </div>
+                </div>
+                 <div class="row" style="margin-top:6px">
+                    <div class="col-12">
+                         <div class="form-outline form-white">
+                           <input type="number" id="drmo" name="drmo" class="form-control form-control-lg"/>
+                            <label class="form-label" style="color:white" for="drmo">Doctor Mobile NO:</label>
+                           </div>
+                       </div>
+                </div>
+                   
+                 <div class="row" style="margin-top:6px">
+                    <div class="col-12">
+                         <div class="form-outline form-white">
+                               <label class="form-label" style="color:white" for="drmo">Doctor Specialization:</label>
+                               <select name="spl" class="form-select" id="spld">                                
+                                  <option>--Specialization--</option>                                                            
+                                </select>
+                           </div>
+                       </div>
+                </div>
+                 <div class="row" style="margin-top:6px">
+                  <div class="col-12">
+                       
+                        <label for="formFileLg" style="color:white" class="form-label">Upload Picture</label>
+                        <input name="drimg" class="form-control form-white form-control-lg" id="formFileLg" type="file" />
+                       
+                  </div>
+                </div>
+                <div class="row" style="margin-top:10px">
+                <div class="col-6">
+                  <button type="submit" class="btn btn-light" style="width:100%;" data-mdb-ripple-color="dark">Save</button>
+                  </div>
+                <div class="col-6">
+                  <button type="reset" class="btn btn-light" style="width:100%;" data-mdb-ripple-color="dark">Reset</button>
+
+                  </div>
+                </div>
+                <div class="row" style="margin-top:6px">
+                  <div class="col-12" style="color:#FFF; font-size:24px;">
+                    {{msg}}                 
+                  </div>
+                </div>
+              
+              
+               </div>
+             </div>
+        </div>
+        </form>
+    </body>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"
+></script>
+</html>
